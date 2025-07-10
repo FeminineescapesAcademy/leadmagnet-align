@@ -4,5 +4,11 @@
       "path": "/api/send-sequence",
       "schedule": "0 8 * * *"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/leadmagnet.html"
+    }
   ]
 }
