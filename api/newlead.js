@@ -11,15 +11,14 @@ export default async function handler(req, res) {
 
   const { email, prenom } = req.body;
 
-  // Vérification simple
   if (!email || !prenom) {
     return res.status(400).json({ message: "Champs manquants." });
   }
 
-  // Insertion dans Supabase
+  // Insère dans ta table Supabase (renomme la si possible en leadmagnet_prompt pour éviter les erreurs)
   const { error } = await supabase
-    .from('leads')
-    .insert([{ email, prenom }]);
+    .from('Leadmagnet 55 prompt gpt') // ⚠️ nom exact de ta table
+    .insert([{ email_s: email, prenom }]); // email_s car y'a pas "email" directement
 
   if (error) {
     console.error("Erreur Supabase :", error);
