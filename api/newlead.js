@@ -15,10 +15,9 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: "Champs manquants." });
   }
 
-  // Insère dans ta table Supabase (renomme la si possible en leadmagnet_prompt pour éviter les erreurs)
   const { error } = await supabase
-    .from('Leadmagnet 55 prompt gpt') // ⚠️ nom exact de ta table
-    .insert([{ email_s: email, prenom }]); // email_s car y'a pas "email" directement
+    .from('leadmagnet_prompt')
+    .insert([{ email, prenom }]); // ⚠️ On utilise un champ "email" classique, à créer si besoin
 
   if (error) {
     console.error("Erreur Supabase :", error);
