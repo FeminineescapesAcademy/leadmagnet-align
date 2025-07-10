@@ -1,4 +1,11 @@
 {
+  "name": "leadmagnet-align",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "node index.js"
+  },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.4",
     "resend": "^4.6.0"
