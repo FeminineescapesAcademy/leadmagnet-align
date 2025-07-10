@@ -100,7 +100,12 @@
       });
 
       const result = await res.json();
-      document.getElementById("message").textContent = result.message;
+
+      if (res.ok) {
+        window.location.href = "/merci.html";
+      } else {
+        document.getElementById("message").textContent = "Erreur : " + result.message;
+      }
     });
   </script>
 
