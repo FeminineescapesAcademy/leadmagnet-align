@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       html: `
         <p>Bonjour ${prenom},</p>
         <p>Voici le lien pour télécharger ton guide « <strong>55 prompts alignés pour magnétiser ta communauté et vendre sans forcer</strong> » :</p>
-        <p>👉 <a href="https://res.cloudinary.com/diapyc6q1/raw/upload/55_Prompts_alignés_pour_magnétiser_ta_communauté_et_vendre_sans_forcer_compressed_xefz6p.pdf">Télécharger le guide maintenant</a></p>
+        <p>👉 <a href="https://collection.cloudinary.com/diapyc6q1/6a09de32f72d82ffed4f637320a9af1f">Télécharger le guide maintenant</a></p>
         <hr />
         <p>Avant de foncer dans les prompts, je t’invite à faire une pause de 2 minutes.</p>
         <p>Demande-toi : <em>« Qu’est-ce que j’ai vraiment envie de construire ? »</em><br>
