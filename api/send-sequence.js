@@ -21,7 +21,7 @@ export default async function handler(req, res) {
   }
 
   const { data: leads, error } = await supabase
-    .from('Leadmagnet 55 prompt gpt')
+    .from('leadmagnet_prompt') // ✅ nom correct de la table
     .select('*');
 
   if (error) {
@@ -43,23 +43,23 @@ export default async function handler(req, res) {
           to: lead.email,
           subject: '🔥 Ce qui te bloque vraiment (et comment t’en libérer)',
           html: `
-          <p>Bonjour ${lead.prenom},</p>
-          <p>Hier, tu as reçu le guide. Mais laisse-moi te dire un truc qu’on ne t’a peut-être jamais dit clairement…</p>
-          <p>Tu ne manques pas de motivation. Tu n’es pas “trop dispersée”.</p>
-          <p>Tu es juste en train d’essayer de construire ton projet… sans fondations solides.</p>
-          <p>Ce qui te bloque, ce sont ces 3 pièges invisibles :</p>
-          <ul>
-            <li>Tu essaies de tout faire en même temps sans vraie stratégie</li>
-            <li>Tu crois encore que tu dois être “prête” pour te lancer</li>
-            <li>Tu avances seule, sans structure, sans feedback</li>
-          </ul>
-          <p><strong>Align & Build</strong> est l’espace simple et stratégique que tu cherches pour avancer dès maintenant.</p>
-          <p>👉 <a href="https://www.feminineescapes.com/fr/align-build">Je découvre Align & Build</a></p>
-          <p>Avec toi,<br>Morgane</p>
+            <p>Bonjour ${lead.prenom},</p>
+            <p>Hier, tu as reçu le guide. Mais laisse-moi te dire un truc qu’on ne t’a peut-être jamais dit clairement…</p>
+            <p>Tu ne manques pas de motivation. Tu n’es pas “trop dispersée”.</p>
+            <p>Tu es juste en train d’essayer de construire ton projet… sans fondations solides.</p>
+            <p>Ce qui te bloque, ce sont ces 3 pièges invisibles :</p>
+            <ul>
+              <li>Tu essaies de tout faire en même temps sans vraie stratégie</li>
+              <li>Tu crois encore que tu dois être “prête” pour te lancer</li>
+              <li>Tu avances seule, sans structure, sans feedback</li>
+            </ul>
+            <p><strong>Align & Build</strong> est l’espace simple et stratégique que tu cherches pour avancer dès maintenant.</p>
+            <p>👉 <a href="https://www.feminineescapes.com/fr/align-build">Je découvre Align & Build</a></p>
+            <p>Avec toi,<br>Morgane</p>
           `,
         });
         await supabase
-          .from('Leadmagnet 55 prompt gpt')
+          .from('leadmagnet_prompt')
           .update({ email2_sent: true })
           .eq('email', lead.email);
       }
@@ -71,18 +71,18 @@ export default async function handler(req, res) {
           to: lead.email,
           subject: '💡 Et si c’était juste le bon moment ?',
           html: `
-          <p>${lead.prenom},</p>
-          <p>Tu sais ce que me disent les femmes que j’accompagne ?</p>
-          <blockquote>“J’ai hésité… et puis j’ai compris qu’il n’y aurait jamais de moment parfait.”</blockquote>
-          <p>Tu as déjà ce qu’il faut en toi. Ce qu’il te manque, c’est un plan clair, du soutien, et un cadre pour traduire tes idées en action.</p>
-          <p><strong>Align & Build</strong> est conçu pour ça : un espace clair, motivant et activant.</p>
-          <p>🎁 Et franchement… pour 33€, c’est le prix d’un resto. Sauf que là, tu nourris ton avenir.</p>
-          <p>👉 <a href="https://www.feminineescapes.com/fr/align-build">Je rejoins maintenant</a></p>
-          <p>Avec foi,<br>Morgane ✨</p>
+            <p>${lead.prenom},</p>
+            <p>Tu sais ce que me disent les femmes que j’accompagne ?</p>
+            <blockquote>“J’ai hésité… et puis j’ai compris qu’il n’y aurait jamais de moment parfait.”</blockquote>
+            <p>Tu as déjà ce qu’il faut en toi. Ce qu’il te manque, c’est un plan clair, du soutien, et un cadre pour traduire tes idées en action.</p>
+            <p><strong>Align & Build</strong> est conçu pour ça : un espace clair, motivant et activant.</p>
+            <p>🎁 Et franchement… pour 33€, c’est le prix d’un resto. Sauf que là, tu nourris ton avenir.</p>
+            <p>👉 <a href="https://www.feminineescapes.com/fr/align-build">Je rejoins maintenant</a></p>
+            <p>Avec foi,<br>Morgane ✨</p>
           `,
         });
         await supabase
-          .from('Leadmagnet 55 prompt gpt')
+          .from('leadmagnet_prompt')
           .update({ email3_sent: true })
           .eq('email', lead.email);
       }
@@ -94,18 +94,18 @@ export default async function handler(req, res) {
           to: lead.email,
           subject: '⏳ Tu vas vraiment laisser passer cette chance ?',
           html: `
-          <p>${lead.prenom},</p>
-          <p>Ça fait une semaine que tu as reçu le guide. Et si tu lis encore mes mails, c’est qu’une partie de toi SAIT qu’elle a besoin d’agir.</p>
-          <p>Mais l’autre partie hésite. Elle attend un signe. Une preuve. Un coup de pied au cul, peut-être.</p>
-          <p>Alors le voici :</p>
-          <p><strong>Align & Build</strong> est accessible maintenant. Mais si tu n’agis pas aujourd’hui, que se passera-t-il demain ? Tu reviendras à la case départ ?</p>
-          <p>Tu veux des résultats différents ? Il faut oser faire un choix différent.</p>
-          <p>👉 <a href="https://www.feminineescapes.com/fr/align-build">Accéder à Align & Build (33€)</a></p>
-          <p>C’est ton moment.<br>Morgane</p>
+            <p>${lead.prenom},</p>
+            <p>Ça fait une semaine que tu as reçu le guide. Et si tu lis encore mes mails, c’est qu’une partie de toi SAIT qu’elle a besoin d’agir.</p>
+            <p>Mais l’autre partie hésite. Elle attend un signe. Une preuve. Un coup de pied au cul, peut-être.</p>
+            <p>Alors le voici :</p>
+            <p><strong>Align & Build</strong> est accessible maintenant. Mais si tu n’agis pas aujourd’hui, que se passera-t-il demain ? Tu reviendras à la case départ ?</p>
+            <p>Tu veux des résultats différents ? Il faut oser faire un choix différent.</p>
+            <p>👉 <a href="https://www.feminineescapes.com/fr/align-build">Accéder à Align & Build (33€)</a></p>
+            <p>C’est ton moment.<br>Morgane</p>
           `,
         });
         await supabase
-          .from('Leadmagnet 55 prompt gpt')
+          .from('leadmagnet_prompt')
           .update({ email4_sent: true })
           .eq('email', lead.email);
       }
