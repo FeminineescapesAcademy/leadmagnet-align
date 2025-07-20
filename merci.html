@@ -6,53 +6,92 @@
   <title>Merci pour ton inscription</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --deep-plum: #190B40;
+      --soft-peach: #FFE3D9;
+      --lavender-mist: #9F95F1;
+      --blush-pink: #FFB8B8;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Cormorant Garamond', serif;
-      background-color: #FFE3D9;
-      color: #190B40;
       margin: 0;
-      padding: 40px 20px;
+      padding: 0;
+      background: url('https://res.cloudinary.com/diapyc6q1/image/upload/v1753027418/pexels-dreamcatchlight-4721987_uyj38u.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
     .container {
-      max-width: 600px;
-      margin: auto;
-      background-color: #ffffff;
-      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.95);
+      max-width: 520px;
+      width: 100%;
+      margin: 20px;
+      padding: 40px 28px;
       border-radius: 24px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
       text-align: center;
+      box-shadow: 0 12px 40px rgba(25, 11, 64, 0.07);
     }
 
     .logo {
       max-width: 90px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 28px;
       margin-bottom: 24px;
     }
 
+    h1 {
+      font-size: 26px;
+      color: var(--deep-plum);
+      margin-bottom: 20px;
+    }
+
     p {
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.6;
+      color: var(--deep-plum);
+      margin-bottom: 16px;
     }
 
     a.button {
       display: inline-block;
-      margin-top: 32px;
-      background-color: #190B40;
-      color: #fff;
+      margin-top: 28px;
+      background-color: var(--deep-plum);
+      color: var(--white);
       padding: 14px 28px;
       border-radius: 12px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 18px;
+      font-size: 16px;
+      transition: background 0.3s ease;
     }
 
     a.button:hover {
-      background-color: #9F95F1;
+      background-color: var(--lavender-mist);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      a.button {
+        font-size: 15px;
+      }
     }
   </style>
 </head>

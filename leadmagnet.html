@@ -6,65 +6,117 @@
   <title>Reçois ton guide – Feminine Escapes</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --deep-plum: #190B40;
+      --soft-peach: #FFE3D9;
+      --lavender-mist: #9F95F1;
+      --blush-pink: #FFB8B8;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Cormorant Garamond', serif;
-      background-color: #FFE3D9;
-      padding: 40px 20px;
       margin: 0;
+      padding: 0;
+      background: url('https://res.cloudinary.com/diapyc6q1/image/upload/v1753027063/pexels-jillyjillystudio-29765801_vz2sku.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
     .container {
-      max-width: 480px;
-      background-color: #FFFFFF;
-      padding: 32px;
+      width: 100%;
+      max-width: 420px;
+      background-color: rgba(255, 255, 255, 0.93); /* voile blanc transparent */
+      padding: 32px 24px;
       border-radius: 24px;
-      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.05);
-      margin: auto;
+      box-shadow: 0 12px 40px rgba(25, 11, 64, 0.07);
       text-align: center;
+      margin: 20px;
     }
 
     img.logo {
-      max-width: 100px;
-      margin-bottom: 20px;
+      width: 80px;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: 26px;
-      color: #190B40;
-      margin-bottom: 24px;
+      font-size: 24px;
+      color: var(--deep-plum);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    h1 em {
+      display: block;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--lavender-mist);
+      margin-top: 8px;
+    }
+
+    form {
+      margin-top: 24px;
     }
 
     input, button {
       width: 100%;
       padding: 14px;
       margin-bottom: 16px;
-      font-size: 18px;
+      font-size: 16px;
       border-radius: 12px;
-      border: 1px solid #DDD;
       font-family: 'Cormorant Garamond', serif;
+      border: 1px solid #DDD;
+      transition: all 0.3s ease;
     }
 
     input:focus {
-      border-color: #9F95F1;
+      border-color: var(--lavender-mist);
       outline: none;
+      box-shadow: 0 0 0 2px rgba(159, 149, 241, 0.2);
     }
 
     button {
-      background-color: #190B40;
-      color: #FFFFFF;
+      background-color: var(--deep-plum);
+      color: var(--white);
+      font-weight: 600;
       border: none;
       cursor: pointer;
-      transition: background 0.3s;
     }
 
     button:hover {
-      background-color: #9F95F1;
+      background-color: var(--lavender-mist);
     }
 
     #message {
       margin-top: 20px;
-      color: #190B40;
+      color: var(--deep-plum);
       font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 24px 16px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      h1 em {
+        font-size: 18px;
+      }
+
+      input, button {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
